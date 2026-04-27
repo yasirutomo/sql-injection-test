@@ -13,6 +13,3 @@ The file Payload SQL Injection.txt contains grouped example payloads for five wi
 - Time-based (Inferential blind / time delay) — payloads that use time delays (e.g., SLEEP() or WAITFOR) to infer data when the application does not return query results or error messages. The attacker measures response times to extract bits of information.
 
 > Note: these five categories are a concise grouping commonly used in testing and literature; they correspond to well-known classifications such as In-band (UNION, Error), Inferential/Blind (Boolean, Time), and other variants. See the review paper referenced below for a thorough taxonomy (https://doi.org/10.1007/978-981-16-8059-5_35).
-
-## Paper
-* M. Zaedil, I. Syamsuddin, and M. N. Y. Utomo, “Coraza-Based WAF with OWASP CRS for SQL Injection in Multi-Domain Web System”, Journal of Information Systems and Informatics, vol. 8, no. 2, pp. 2337–2362, Apr. 2026, doi: 10.63158/journalisi.v8i2.1475., doi: [10.63158/journalisi.v8i2.1475](https://doi.org/10.63158/journalisi.v8i2.1475).
